@@ -1,9 +1,12 @@
+import { useContext } from "react";
 import RoomSelect from "./RoomSelect";
+import { RoomContext } from "../Context/RoomsContext";
 
-const Main = (props) => {
+const Main = () => {
+  const { rooms } = useContext(RoomContext);
   return (
     <main>
-      <RoomSelect data={props.data} />
+      <RoomSelect data={rooms} />
     </main>
   );
 };

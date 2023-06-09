@@ -3,6 +3,10 @@ import EditIcon from "../../../Assets/EditIcon";
 import tipStyles from "./Tip.module.css";
 
 const Tip = (props) => {
+  const onClickHandler = () => {
+    props.onClick(props.call_text, props.main_text);
+  };
+
   return (
     <Fragment>
       <li className={tipStyles.tip}>
@@ -12,7 +16,7 @@ const Tip = (props) => {
         </div>
         <div>
           <button
-            onClick={props.onClick}
+            onClick={onClickHandler}
             className={tipStyles.button_edit}
             type="button"
           >

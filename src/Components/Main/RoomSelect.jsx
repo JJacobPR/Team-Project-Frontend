@@ -6,7 +6,7 @@ import TipList from "./Tips/TipList";
 
 const RoomSelect = (props) => {
   const [roomSelect, updateRoomSelect] = useState(props.data);
-  const [selectedRoom, updateSelectedRoom] = useState(props?.data[0].tips);
+  const [selectedRoom, updateSelectedRoom] = useState(props?.data[0]);
 
   useEffect(() => {
     updateRoomSelect(props.data);
@@ -21,7 +21,7 @@ const RoomSelect = (props) => {
       (room) => room.id === +event.target.value
     );
 
-    updateSelectedRoom(selectedRoom.tips);
+    updateSelectedRoom(selectedRoom);
   };
 
   return (
@@ -42,7 +42,10 @@ const RoomSelect = (props) => {
           </div>
         </form>
       </section>
-      <TipList currentRoomTips={selectedRoom} />
+      <TipList
+        currentRoomTips={selectedRoom.tips}
+        currentRoomId={selectedRoom.id}
+      />
     </Fragment>
   );
 };

@@ -1,8 +1,11 @@
-import { Fragment } from "react";
+import { Fragment, useContext } from "react";
 import tipFormStyles from "./TipModal.module.css";
 import ReactDOM from "react-dom";
+import { RoomContext } from "../../Context/RoomsContext";
 
 const TipModal = (props) => {
+  const { rooms, deleteTip } = useContext(RoomContext);
+
   const HideModal = () => {
     props.onClick();
   };
@@ -17,12 +20,12 @@ const TipModal = (props) => {
             <input
               className={tipFormStyles.modal_input}
               type="text"
-              defaultValue="Callout text..."
+              defaultValue={props.curTip.call}
             />
             <input
               className={tipFormStyles.modal_input}
               type="text"
-              defaultValue="Tip text..."
+              defaultValue={props.curTip.body}
             />
           </div>
           <div className={tipFormStyles.modal_buttons}>

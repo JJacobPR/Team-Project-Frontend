@@ -1,14 +1,19 @@
-import { Fragment, useState } from "react";
+import { Fragment, useContext, useState } from "react";
 import Tip from "./Tip";
 import tipListStyles from "./TipList.module.css";
 import TipModal from "./TipModal";
+import { RoomContext } from "../../Context/RoomsContext";
 
 const TipList = (props) => {
   const [showModal, updateShowModal] = useState(false);
+  const [currentTip, updateCurrentTip] = useState();
 
-  const toggleModal = () => {
+  const toggleModal = (call, body) => {
+    updateCurrentTip({ call, body });
     updateShowModal(!showModal);
   };
+
+  const deleteTip = (call) => {};
 
   const tipList = props.currentRoomTips.map((obj) => (
     <Tip
@@ -22,7 +27,13 @@ const TipList = (props) => {
   return (
     <Fragment>
       <ul className={tipListStyles.list}>{tipList}</ul>
-      {showModal && <TipModal onClick={toggleModal} />}
+      {showModal && (
+        <TipModal
+          onClick={toggleModal}
+          onDelete={deleteTip}
+          curTip={currentTip}
+        />
+      )}
     </Fragment>
   );
 };
