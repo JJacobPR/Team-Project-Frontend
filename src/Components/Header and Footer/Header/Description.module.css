@@ -1,0 +1,25 @@
+.desc_wrapper {
+  width: 25%;
+  text-align: center;
+  margin: auto;
+  background-color: purple;
+  padding: 25px;
+  border-radius: 30px;
+  position: absolute;
+  left: 50%;
+  top: 10rem;
+  transform: translateX(-50%);
+}
+
+.maind {
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 768px) {
+  .desc_wrapper {
+    width: 80%;
+  }
+}

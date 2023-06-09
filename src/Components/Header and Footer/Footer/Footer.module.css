@@ -1,0 +1,10 @@
+footer {
+  margin-top: auto;
+  width: 100%;
+  background-color: purple;
+  color: white;
+}
+
+.text {
+  margin-left: 5px;
+}
