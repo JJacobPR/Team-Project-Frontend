@@ -1,4 +1,4 @@
-button {
+.button_header {
   border: 2px solid white;
   border-radius: 15px;
   padding: 0.5rem;
@@ -11,7 +11,7 @@ button {
   transition: all 0.1s ease-in;
 }
 
-button:hover {
+.button_header:hover {
   background-color: rgb(238, 65, 238);
   color: white;
   transform: translateY(-5px);

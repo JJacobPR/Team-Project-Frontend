@@ -1,0 +1,43 @@
+.form_section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.form_title {
+  color: white;
+  background-color: purple;
+  padding: 4px;
+  font-size: 3rem;
+  box-shadow: 0 0 10px purple;
+}
+
+.form {
+  transform: scale(1.5);
+  display: flex;
+  background-color: purple;
+  align-items: center;
+}
+
+.form_select {
+  border: none;
+  appearance: none;
+  padding: 2px 4px 2px 2px;
+  background-color: purple;
+  color: white;
+  cursor: pointer;
+}
+
+.form_select:focus-visible {
+  outline: none;
+}
+
+.icon_wrapper {
+  pointer-events: none;
+  background-color: rgb(149, 19, 167);
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+}

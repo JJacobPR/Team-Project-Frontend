@@ -1,9 +1,9 @@
 import RoomSelect from "./RoomSelect";
 
-const Main = () => {
+const Main = (props) => {
   return (
     <main>
-      <RoomSelect />
+      <RoomSelect data={props.data} />
     </main>
   );
 };

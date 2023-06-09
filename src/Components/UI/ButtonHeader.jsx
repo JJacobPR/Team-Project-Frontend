@@ -1,7 +1,9 @@
-import "./ButtonHeader.module.css";
+import buttonStyles from "./ButtonHeader.module.css";
 
 const ButtonHeader = (props) => {
-  return <button>{props.btn_text}</button>;
+  return (
+    <button className={buttonStyles.button_header}>{props.btn_text}</button>
+  );
 };
 
 export default ButtonHeader;
