@@ -2,3 +2,32 @@
   width: 50%;
   margin: auto;
 }
+
+.add_button_wrapper {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.add_button {
+  border: none;
+  border-radius: 30px;
+  padding: 1rem 6rem 1rem 6rem;
+  background-color: purple;
+  cursor: pointer;
+  font-family: "Geologica";
+  font-weight: 400;
+  font-size: 2rem;
+  color: white;
+  transition: all 0.1s ease-in;
+  box-shadow: 0 0 10px purple;
+}
+
+.add_button:hover {
+  background-color: white;
+  color: purple;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px white;
+}

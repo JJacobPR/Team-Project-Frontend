@@ -2,10 +2,11 @@ import { Fragment, useContext, useState } from "react";
 import Tip from "./Tip";
 import tipListStyles from "./TipList.module.css";
 import TipModal from "./TipModal";
-import { RoomContext } from "../../Context/RoomsContext";
+import NewTipTipModal from "./NewTipModal";
 
 const TipList = (props) => {
   const [showModal, updateShowModal] = useState(false);
+  const [showNewTipModal, updateShowNewTipModal] = useState(false);
   const [currentTip, updateCurrentTip] = useState();
 
   const toggleModal = (call, body) => {
@@ -13,7 +14,9 @@ const TipList = (props) => {
     updateShowModal(!showModal);
   };
 
-  const deleteTip = (call) => {};
+  const toggleNewTipModal = () => {
+    updateShowNewTipModal(!showNewTipModal);
+  };
 
   const tipList = props.currentRoomTips.map((obj) => (
     <Tip
@@ -27,11 +30,25 @@ const TipList = (props) => {
   return (
     <Fragment>
       <ul className={tipListStyles.list}>{tipList}</ul>
+      <div className={tipListStyles.add_button_wrapper}>
+        <button
+          onClick={toggleNewTipModal}
+          className={tipListStyles.add_button}
+        >
+          Add Tip
+        </button>
+      </div>
       {showModal && (
         <TipModal
           onClick={toggleModal}
-          onDelete={deleteTip}
           curTip={currentTip}
+          curId={props.currentRoomId}
+        />
+      )}
+      {showNewTipModal && (
+        <NewTipTipModal
+          curId={props.currentRoomId}
+          onClick={toggleNewTipModal}
         />
       )}
     </Fragment>

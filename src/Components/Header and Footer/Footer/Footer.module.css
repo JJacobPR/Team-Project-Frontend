@@ -3,6 +3,8 @@ footer {
   width: 100%;
   background-color: purple;
   color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .text {

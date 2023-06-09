@@ -3,24 +3,18 @@ import tipFormStyles from "./TipModal.module.css";
 import ReactDOM from "react-dom";
 import { RoomContext } from "../../Context/RoomsContext";
 
-const TipModal = (props) => {
-  const { rooms, deleteTip, modifyTip } = useContext(RoomContext);
-  const [callInput, updateCallInput] = useState(props.curTip.call);
-  const [bodyInput, updateBodyInput] = useState(props.curTip.body);
+const NewTipTipModal = (props) => {
+  const { addTip } = useContext(RoomContext);
+  const [callInput, updateCallInput] = useState("...");
+  const [bodyInput, updateBodyInput] = useState("...");
 
   const HideModal = () => {
     props.onClick();
   };
 
-  const deleteHandler = (event) => {
+  const addHandler = (event) => {
     event.preventDefault();
-    deleteTip(props.curId, props.curTip.call);
-    props.onClick();
-  };
-
-  const modifyHandler = (event) => {
-    event.preventDefault();
-    modifyTip(props.curId, props.curTip.call, callInput, bodyInput);
+    addTip(props.curId, callInput, bodyInput);
     props.onClick();
   };
 
@@ -36,7 +30,7 @@ const TipModal = (props) => {
     <Fragment>
       <div onClick={HideModal} className={tipFormStyles.overlay}></div>
       <div className={tipFormStyles.modal}>
-        <h2 className={tipFormStyles.modal_title}>Edit Tip</h2>
+        <h2 className={tipFormStyles.modal_title}>Add Tip</h2>
         <form className={tipFormStyles.modal_form}>
           <div className={tipFormStyles.modal_inputs}>
             <input
@@ -53,17 +47,8 @@ const TipModal = (props) => {
             />
           </div>
           <div className={tipFormStyles.modal_buttons}>
-            <button
-              onClick={modifyHandler}
-              className={tipFormStyles.modal_button}
-            >
-              Modify
-            </button>
-            <button
-              onClick={deleteHandler}
-              className={tipFormStyles.modal_button}
-            >
-              Delete
+            <button onClick={addHandler} className={tipFormStyles.modal_button}>
+              Add
             </button>
           </div>
         </form>
@@ -73,4 +58,4 @@ const TipModal = (props) => {
   );
 };
 
-export default TipModal;
+export default NewTipTipModal;

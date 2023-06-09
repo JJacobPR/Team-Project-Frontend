@@ -1,6 +1,5 @@
 .overlay {
   z-index: 15;
-
   background-color: rgb(000, 000, 000, 0.5);
   position: fixed;
   top: 0;
