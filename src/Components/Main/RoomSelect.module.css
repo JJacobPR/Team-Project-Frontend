@@ -41,3 +41,30 @@
   display: flex;
   justify-content: center;
 }
+
+.forms {
+  display: flex;
+  width: 50%;
+  gap: 30%;
+  justify-content: center;
+}
+
+.btn_submit {
+  border: none;
+  background-color: purple;
+  cursor: pointer;
+  font-family: "Geologica";
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.5rem;
+  color: white;
+  transition: all 0.1s ease-in;
+  box-shadow: 0 0 10px purple;
+}
+
+.btn_submit:hover {
+  background-color: white;
+  color: purple;
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px white;
+}

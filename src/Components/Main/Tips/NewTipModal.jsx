@@ -7,6 +7,7 @@ const NewTipTipModal = (props) => {
   const { addTip } = useContext(RoomContext);
   const [callInput, updateCallInput] = useState("...");
   const [bodyInput, updateBodyInput] = useState("...");
+  const [tipSoundInput, updateTipSoundInput] = useState("...");
 
   const HideModal = () => {
     props.onClick();
@@ -24,6 +25,11 @@ const NewTipTipModal = (props) => {
 
   const callInputHandler = (e) => {
     updateCallInput(e.target.value);
+  };
+
+  const tipSoundHandler = (e) => {
+    updateTipSoundInput(e.target.value);
+    console.log(e.target.value);
   };
 
   return ReactDOM.createPortal(
@@ -46,6 +52,13 @@ const NewTipTipModal = (props) => {
               onChange={bodyInputHandler}
             />
           </div>
+          <input
+            className={tipFormStyles.modal_input}
+            type="file"
+            id="soundFile"
+            accept="audio/*"
+            onChange={tipSoundHandler}
+          />
           <div className={tipFormStyles.modal_buttons}>
             <button onClick={addHandler} className={tipFormStyles.modal_button}>
               Add
