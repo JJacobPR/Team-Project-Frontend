@@ -11,7 +11,7 @@ const Tip = (props) => {
     <Fragment>
       <li className={tipStyles.tip}>
         <div className={tipStyles.desc}>
-          <p>Tip Callout: Hey, {props.call_text}!</p>
+          <p>Tip Callout: {props.call_text}</p>
           <p>Tip Content: {props.main_text}</p>
         </div>
         <div>

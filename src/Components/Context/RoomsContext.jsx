@@ -7,17 +7,26 @@ const roomsDefaultState = [
     id: 0,
     name: "Crime Scene",
     tips: [
-      { tip_body: "Get over here", tip_call: "John" },
-      { tip_body: "Time to die", tip_call: "Ciri" },
+      { tip_body: "weapon", tip_call: "Weapon" },
+      { tip_body: "date", tip_call: "Time" },
     ],
   },
   {
     id: 1,
-    name: "FairyTale",
+    name: "#Test1",
     tips: [
-      { tip_body: "Apples and meat", tip_call: "Wolf" },
-      { tip_body: "Nothing Important", tip_call: "Donkey" },
-      { tip_body: "Get out of my Swamp", tip_call: "Shrek" },
+      { tip_body: "#FileName1", tip_call: "#Call1" },
+      { tip_body: "#FileName2", tip_call: "#Call2" },
+      { tip_body: "#FileName3", tip_call: "#Call3" },
+    ],
+  },
+  {
+    id: 2,
+    name: "#Test2",
+    tips: [
+      { tip_body: "#FileName1", tip_call: "#Call1" },
+      { tip_body: "#FileName2", tip_call: "#Call2" },
+      { tip_body: "#FileName3", tip_call: "#Call3" },
     ],
   },
 ];

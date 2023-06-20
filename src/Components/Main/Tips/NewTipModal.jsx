@@ -52,13 +52,6 @@ const NewTipTipModal = (props) => {
               onChange={bodyInputHandler}
             />
           </div>
-          <input
-            className={tipFormStyles.modal_input}
-            type="file"
-            id="soundFile"
-            accept="audio/*"
-            onChange={tipSoundHandler}
-          />
           <div className={tipFormStyles.modal_buttons}>
             <button onClick={addHandler} className={tipFormStyles.modal_button}>
               Add
